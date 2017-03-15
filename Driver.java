@@ -13,20 +13,24 @@ public class Driver{
 
 			String line;
 			char operation;
-			char[] id = new char[11];
+			String [] array;
+			String id;
 			String lastName;
 			String homeDeapartment;
 			String program;
-			int year; 
+			String year; 
 
 			while( (line = breader.readLine()) != null)
 			{
-				line.trim();
+				array = line.split("\\s+");
 				operation = line.charAt(0);
-				for (int i = 1; i <=7; i++){
-					id[i] = line.charAt(i);
-				}
-				System.out.println("Id: "+ id + "operation: " + operation);
+				id = array[0].substring(1,8);
+				lastName = array[0].substring(8);
+				homeDeapartment = array[1].substring(0,4);
+				program = array[1].substring(4);
+				year = array[2];
+
+				//System.out.println(year);
 			}
 			reader.close();
 		}catch (IOException e)

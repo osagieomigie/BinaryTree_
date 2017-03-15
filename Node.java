@@ -3,7 +3,7 @@ public class Node{
 	String data; 
 	Node left, right;
 
-	Node(String name, int id, String homeDepartment, String program, int year){
+	Node(String name, String id, String homeDepartment, String program, String year){
 		s.lastName = name;
 		s.id = id;
 		s.homeDepartment = homeDepartment;
