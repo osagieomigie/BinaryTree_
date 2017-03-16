@@ -136,19 +136,21 @@ public class BinaryTree{
 	public String display(Node root)
 	{
 		StringBuilder s = new StringBuilder();
-		String leftS = " ";
-		String rightS = " ";
-		String str = " ";
+		String leftString = "";
+		String rightString = "";
+		String rootString = "";
 		if(root != null){
 			
-			leftS = display(root.left);
-			str = root.data;
-			rightS = display(root.right);
+			leftString = display(root.left);
+			rootString = root.data;
+			rightString = display(root.right);
 		}
-		s.append(leftS);
-		s.append("\n");
-		s.append(str);
-		s.append(rightS);
+		s.append(leftString);
+		s.append(System.lineSeparator());
+		s.append(rootString);
+		s.append(System.lineSeparator());
+		s.append(rightString);
+		s.append(System.lineSeparator());
 
 		return s.toString();
 	}
