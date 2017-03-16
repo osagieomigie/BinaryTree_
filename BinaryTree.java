@@ -1,22 +1,22 @@
-//import java.util.list
+import java.util.*;
 
 public class BinaryTree{
 	
 	public static Node root;
-	//Queue <Student> = new Queue<student>
+	Queue <Node> queue= new Queue<Node>
 
 	BinaryTree(){
 		this.root = null;
 	}
 
 	public void insert(String name, String id, String homeDepartment, String program, String year){
-		Node newNode = new Node(name, id, homeDepartment, program, year);
+		Student newNode = new Student(name, id, homeDepartment, program, year);
 		if (root == null){
 			root = newNode;
 			return;
 		}
-		Node current = root;
-		Node parent = null;
+		Student current = root;
+		Student parent = null;
 		while(true){
 			parent = current;
 			int compare = name.compareTo(current.data);
@@ -63,7 +63,7 @@ public class BinaryTree{
 	}*/
 
 
-	public void preOrder(Node root){
+	public void preOrder(Student root){
 		if (root == null)
 			return;
 		System.out.println(root.data);
@@ -71,7 +71,7 @@ public class BinaryTree{
 		preOrder(root.right);
 	}
 
-	public void postOrder(Node root){
+	public void postOrder(Student root){
 		if (root == null)
 			return;
 		preOrder(root.left);
@@ -79,7 +79,7 @@ public class BinaryTree{
 		System.out.println(root.data);
 	}
 
-	public String minValue(Node root){
+	public String minValue(Student root){
 		String min = root.data;
 		while(root.left != null){
 			min = root.left.data;
@@ -88,12 +88,12 @@ public class BinaryTree{
 		return min;
 	}
 
-	public void delete(Node root, String key){
+	public void delete(Student root, String key){
 		root = deleteRec(root, key);
 
 	}
 
-	private Node deleteRec(Node root, String key)
+	private Student deleteRec(Student root, String key)
 	{
 		if (root == null){
 			return root;
@@ -119,7 +119,7 @@ public class BinaryTree{
 		return root; 
 	}
 
-	public void BFS(Node root){
+	public void BFS(Student root){
 		if (root == null){
 			return;
 		}
@@ -133,7 +133,7 @@ public class BinaryTree{
 		return (root == null);
 	}
 
-	public void display(Node root)
+	public void display(Student root)
 	{
 		if(root != null){
 			display(root.left);
