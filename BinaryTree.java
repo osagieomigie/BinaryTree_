@@ -146,11 +146,9 @@ public class BinaryTree{
 			rightString = display(root.right);
 		}
 		s.append(leftString);
-		s.append(System.lineSeparator());
 		s.append(rootString);
 		s.append(System.lineSeparator());
 		s.append(rightString);
-		s.append(System.lineSeparator());
 
 		return s.toString();
 	}

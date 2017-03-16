@@ -44,28 +44,21 @@ public class Driver{
 		{
 			e.printStackTrace();
 		}
-		System.out.println(bt.display(bt.root));
+		//System.out.println(bt.display(bt.root));
 
-		/*try{
+		try{
         	FileWriter writer = new FileWriter(args[1], true);
         	BufferedWriter bufferedWriter = new BufferedWriter(writer);
 
-        	for (int i = 1; i < buckets.length; i++){
-        		Node current = buckets[i].head;
-    			while (current != null) {
-    				bufferedWriter.write(current.data);	
-    				bufferedWriter.write("\t");
-    				bufferedWriter.newLine();
-            		current = current.next; 
-            		//incre++;
-        		}
-        		bufferedWriter.write(" ");
-        	}
-   		}  
+    		bufferedWriter.write(bt.display(bt.root));	
+    		bufferedWriter.write("\t");
+    		//bufferedWriter.newLine();
+        	//bufferedWriter.write(" ");
+        	bufferedWriter.close();
 
-        catch (IOException e)
+		}  catch (IOException e)
 		{
 			e.printStackTrace();
-		}*/
+		}
 	}
 }
