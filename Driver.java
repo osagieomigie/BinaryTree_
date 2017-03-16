@@ -16,7 +16,7 @@ public class Driver{
 			String [] array;
 			String id;
 			String lastName;
-			String homeDeapartment;
+			String homeDepartment;
 			String program;
 			String year; 
 
@@ -26,10 +26,21 @@ public class Driver{
 				operation = line.charAt(0);
 				id = array[0].substring(1,8);
 				lastName = array[0].substring(8);
-				homeDeapartment = array[1].substring(0,4);
+				homeDepartment = array[1].substring(0,4);
 				program = array[1].substring(4);
 				year = array[2];
 
+				if (operation == 'I'){
+					System.out.println(id);
+					System.out.println(lastName);
+					System.out.println(homeDepartment);
+					System.out.println(program);
+					System.out.println(year);
+					bt.insert(lastName, id, homeDepartment, program, year);
+				}
+				else{
+					bt.delete(bt.root, lastName);
+				}
 				//System.out.println(year);
 			}
 			reader.close();

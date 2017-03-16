@@ -1,9 +1,9 @@
 public class Student{
 	String lastName;
-	int id; 
+	String id; 
 	String program;
 	String homeDepartment; 
-	int year;
+	String year;
 
 	public String toString()
 	{

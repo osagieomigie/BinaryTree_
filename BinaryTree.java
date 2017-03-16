@@ -9,7 +9,7 @@ public class BinaryTree{
 		this.root = null;
 	}
 
-	public void insert(String name, int id, String homeDepartment, String program, int year){
+	public void insert(String name, String id, String homeDepartment, String program, String year){
 		Node newNode = new Node(name, id, homeDepartment, program, year);
 		if (root == null){
 			root = newNode;
