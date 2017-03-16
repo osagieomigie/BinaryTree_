@@ -19,7 +19,8 @@ public class BinaryTree{
 		Node parent = null;
 		while(true){
 			parent = current;
-			if(name.compareTo(current.data) == -1) // name < current.data
+			int compare = name.compareTo(current.data);
+			if( compare < 0) // name < current.data
 			{
 				current = current.left;
 				if(current == null){
@@ -97,9 +98,11 @@ public class BinaryTree{
 		if (root == null){
 			return root;
 		}
-		if (key.compareTo(root.data) == -1)
+		int compare = key.compareTo(root.data);
+		if (compare < 0)
 			root.left = deleteRec(root.left, key);
-		else if (key.compareTo(root.data) == 1)
+		
+		else if ( compare > 0)
 			root.right = deleteRec(root.right, key);
 		else{
 			if (root.left == null)

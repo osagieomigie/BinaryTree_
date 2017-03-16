@@ -1,5 +1,5 @@
 public class Node{
-	Student s; // Student aStudent 
+	Student s = new Student(); // Student aStudent 
 	String data; 
 	Node left, right;
 
