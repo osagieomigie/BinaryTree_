@@ -4,8 +4,6 @@ public class Student{
 	String program;
 	String homeDepartment; 
 	String year;
-	String data; 
-	Student left, right;
 
 	Student (String name, String id, String homeDepartment, String program, String year){
 		lastName = name;
@@ -13,8 +11,6 @@ public class Student{
 		homeDepartment = homeDepartment;
 		program = program;
 		year = year; 
-		data = name;
-		left = right = null;
 	}
 	
 	public String toString()
