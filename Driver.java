@@ -1,5 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class Driver{
@@ -42,6 +44,28 @@ public class Driver{
 		{
 			e.printStackTrace();
 		}
-		bt.display(bt.root);
+		System.out.println(bt.display(bt.root));
+
+		/*try{
+        	FileWriter writer = new FileWriter(args[1], true);
+        	BufferedWriter bufferedWriter = new BufferedWriter(writer);
+
+        	for (int i = 1; i < buckets.length; i++){
+        		Node current = buckets[i].head;
+    			while (current != null) {
+    				bufferedWriter.write(current.data);	
+    				bufferedWriter.write("\t");
+    				bufferedWriter.newLine();
+            		current = current.next; 
+            		//incre++;
+        		}
+        		bufferedWriter.write(" ");
+        	}
+   		}  
+
+        catch (IOException e)
+		{
+			e.printStackTrace();
+		}*/
 	}
 }

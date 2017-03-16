@@ -133,12 +133,27 @@ public class BinaryTree{
 		return (root == null);
 	}
 
-	public void display(Node root)
+	public String display(Node root)
 	{
+		StringBuilder s = new StringBuilder();
+		String leftS = " ";
+		String rightS = " ";
+		String str = " ";
 		if(root != null){
-			display(root.left);
-			System.out.println(" "+root.data);
-			display(root.right);
+			
+			leftS = display(root.left);
+			str = root.data;
+			rightS = display(root.right);
 		}
+		s.append(leftS);
+		s.append("\n");
+		s.append(str);
+		s.append(rightS);
+
+		return s.toString();
 	}
+
+	//private String displayHelper(Node root){
+
+	//}
 }
