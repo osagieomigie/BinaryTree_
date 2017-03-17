@@ -44,7 +44,7 @@ public class Driver{
 		{
 			e.printStackTrace();
 		}
-		//bt.breathFirst(bt.root);
+		bt.breathFirst(bt.root);
 
 		try{
         	FileWriter writer = new FileWriter(args[1], true);

@@ -3,7 +3,7 @@ import java.util.*;
 public class BinaryTree{
 	
 	public static Node root;
-	//Queue queue = new LinkedList();
+	Queue queue;
 
 	BinaryTree(){
 		this.root = null;
@@ -120,14 +120,18 @@ public class BinaryTree{
 	}
 
 	public void breathFirst(Node root){
-		if (root == null){
-			return;
+		queue = new Queue();
+		queue.enQueue(root);
+		while(queue.head != -1){
+			Node aNode = queue.deQueue();
+			System.out.println(aNode.name);
+			if (aNode.left != null){
+				queue.enQueue(aNode.left);
+			}
+			if (aNode.right != null) {
+				queue.enQueue(aNode.right);	
+			}
 		}
-		System.out.println(root.name);
-		breathFirst(root.left);
-		breathFirst(root.right);
-		//queue.add(root.data);
-		//System.out.println(queue);
 	}
 	
 	public boolean isEmpty()
@@ -154,8 +158,4 @@ public class BinaryTree{
 
 		return s.toString();
 	}
-
-	//private String displayHelper(Node root){
-
-	//}
 }
