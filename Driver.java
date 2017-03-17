@@ -44,16 +44,14 @@ public class Driver{
 		{
 			e.printStackTrace();
 		}
-		//System.out.println(bt.display(bt.root));
+		//bt.breathFirst(bt.root);
 
 		try{
         	FileWriter writer = new FileWriter(args[1], true);
         	BufferedWriter bufferedWriter = new BufferedWriter(writer);
 
-    		bufferedWriter.write(bt.display(bt.root));	
+    		bufferedWriter.write(bt.inOrder(bt.root));	
     		bufferedWriter.write("\t");
-    		//bufferedWriter.newLine();
-        	//bufferedWriter.write(" ");
         	bufferedWriter.close();
 
 		}  catch (IOException e)

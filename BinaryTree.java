@@ -3,7 +3,7 @@ import java.util.*;
 public class BinaryTree{
 	
 	public static Node root;
-	//Queue <Node> queue= new Queue<Node>
+	//Queue queue = new LinkedList();
 
 	BinaryTree(){
 		this.root = null;
@@ -19,7 +19,7 @@ public class BinaryTree{
 		Node parent = null;
 		while(true){
 			parent = current;
-			int compare = name.compareTo(current.data);
+			int compare = name.compareTo(current.name);
 			if( compare < 0) // name < current.data
 			{
 				current = current.left;
@@ -66,7 +66,7 @@ public class BinaryTree{
 	public void preOrder(Node root){
 		if (root == null)
 			return;
-		System.out.println(root.data);
+		System.out.println(root.name);
 		preOrder(root.left);
 		preOrder(root.right);
 	}
@@ -76,13 +76,13 @@ public class BinaryTree{
 			return;
 		preOrder(root.left);
 		preOrder(root.right);
-		System.out.println(root.data);
+		System.out.println(root.name);
 	}
 
 	public String minValue(Node root){
-		String min = root.data;
+		String min = root.name;
 		while(root.left != null){
-			min = root.left.data;
+			min = root.left.name;
 			root = root.left;
 		}
 		return min;
@@ -98,7 +98,7 @@ public class BinaryTree{
 		if (root == null){
 			return root;
 		}
-		int compare = key.compareTo(root.data);
+		int compare = key.compareTo(root.name);
 		if (compare < 0)
 			root.left = deleteRec(root.left, key);
 		
@@ -113,27 +113,29 @@ public class BinaryTree{
 			{
 				return root.left;
 			}
-			root.data = minValue(root.right);
-			root.right = deleteRec(root.right, root.data);
+			root.name = minValue(root.right);
+			root.right = deleteRec(root.right, root.name);
 		}
 		return root; 
 	}
 
-	public void BFS(Node root){
+	public void breathFirst(Node root){
 		if (root == null){
 			return;
 		}
-		System.out.println(root.data);
-		BFS(root.left);
-		BFS(root.right);
-		//q.add(root.data);
+		System.out.println(root.name);
+		breathFirst(root.left);
+		breathFirst(root.right);
+		//queue.add(root.data);
+		//System.out.println(queue);
 	}
+	
 	public boolean isEmpty()
 	{
 		return (root == null);
 	}
 
-	public String display(Node root)
+	public String inOrder(Node root)
 	{
 		StringBuilder s = new StringBuilder();
 		String leftString = "";
@@ -141,9 +143,9 @@ public class BinaryTree{
 		String rootString = "";
 		if(root != null){
 			
-			leftString = display(root.left);
-			rootString = root.data;
-			rightString = display(root.right);
+			leftString = inOrder(root.left);
+			rootString = root.name + " " + root.id + " " + root.homeDepartment + " " + root.program + " " + root.year;
+			rightString = inOrder(root.right);
 		}
 		s.append(leftString);
 		s.append(rootString);
